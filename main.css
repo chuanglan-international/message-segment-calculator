@@ -1,0 +1,231 @@
+body {
+    max-width: 100%;
+    font-family: "Helvetica", sans-serif;
+    font-size: 11pt;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+}
+
+#calculator-header {
+    background-color: #233659;
+    padding: 10px;
+}
+
+#message-box {
+    color: white;
+    margin-bottom: 10px;
+}
+
+#message-box > textarea {
+    resize: vertical;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 5em;
+}
+
+#information-box {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    column-gap: 10px;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+}
+#information-box > .label {
+    padding-top: 5px;
+    text-align: center;
+    font-size: small;
+    font-variant: all-petite-caps;
+    background-color: #233659;
+    color: white;
+}
+#information-box > .value {
+    padding-top: 5px;
+    font-size: medium;
+    text-align: center;
+    background-color: #233659;
+    color: white;
+    margin-bottom: 0;
+}
+
+#viewers {
+    background-color: #F9F9F9;
+    padding-top: 20px;
+}
+#viewers-inner {
+    color: black;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.label {
+    display: block;
+    font-size: small;
+    font-variant: all-petite-caps;
+    padding-bottom: 5px;
+}
+.value {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#message-viewer, #segments-viewer {
+    line-height: 0.8;
+}
+
+.block {
+    align-items: center;
+    color: black;
+    display: inline-flex;
+    font-family: monospace;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+}
+.block.selected {
+    color: white;
+}
+.block > span {
+    cursor: default;
+}
+.block > span.invisible::before {
+    content: "•";
+}
+
+#message-viewer > .block {
+    font-size: 12px;
+    height: 2em;
+}
+#message-viewer > .block.error {
+    background-color: red;
+}
+
+#segments-viewer > .block {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 10px;
+    height: 1em;
+    padding: 4px;
+    width: 6ch;
+}
+#segments-viewer > .block.twilio > img {
+    display: inline;
+    height: 1em;
+}
+
+/********************************/
+/* GSM-7 Segments Color Palette */
+/********************************/
+[data-encoding="GSM-7"] .segment-type-0 {
+    background-color: #CCE4FF;
+}
+[data-encoding="GSM-7"] .segment-type-0.selected {
+    background-color: #0263E0;
+}
+
+[data-encoding="GSM-7"] .segment-type-1 {
+    background-color: #D1FAE0;
+}
+[data-encoding="GSM-7"] .segment-type-1.selected {
+    background-color: #14B053;
+}
+
+[data-encoding="GSM-7"] .segment-type-2 {
+    background-color: #FDDCC4;
+}
+[data-encoding="GSM-7"] .segment-type-2.selected {
+    background-color: #F47C22;
+}
+
+[data-encoding="GSM-7"] .segment-type-3 {
+    background-color: #FFF1B3;
+}
+[data-encoding="GSM-7"] .segment-type-3.selected {
+    background-color: #E8B407;
+}
+
+[data-encoding="GSM-7"] .segment-type-4 {
+   background-color: #E7DCFA;
+}
+[data-encoding="GSM-7"] .segment-type-4.selected {
+    background-color: #6D2ED1;
+}
+
+/********************************/
+/* UCS-2 Segments Color Palette */
+/********************************/
+[data-encoding="UCS-2"] .segment-type-0 {
+    background-color: #FFF1B3;
+}
+[data-encoding="UCS-2"] .segment-type-0.selected {
+    background-color: #E8B407;
+}
+
+[data-encoding="UCS-2"] .segment-type-1 {
+    background-color: #E7DCFA;
+}
+[data-encoding="UCS-2"] .segment-type-1.selected {
+    background-color: #6D2ED1;
+}
+
+[data-encoding="UCS-2"] .segment-type-2 {
+    background-color: #CCE4FF;
+}
+[data-encoding="UCS-2"] .segment-type-2.selected {
+    background-color: #0263E0;
+}
+
+[data-encoding="UCS-2"] .segment-type-3 {
+    background-color: #D1FAE0;
+}
+[data-encoding="UCS-2"] .segment-type-3.selected {
+    background-color: #14B053;
+}
+
+[data-encoding="UCS-2"] .segment-type-4 {
+   background-color: #FDDCC4;
+}
+[data-encoding="UCS-2"] .segment-type-4.selected {
+    background-color: #F47C22;
+}
+
+.block.non-gsm {
+  color: red;
+}
+
+.recently-changed {
+    animation: pulseHighlight 1s ease-out infinite;
+}
+
+@keyframes pulseHighlight {
+  0% {
+    color: yellow;
+  }
+  100% {
+    color: white;
+  }
+}
+
+/********************************/
+/* Legend                       */
+/********************************/
+.legend {
+    font-size: 10px;
+    background-color: #f9f9f9;
+    padding: 0px 0px 5px 5px;
+}
+
+.legend-block {
+    display: inline;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 10px;
+    height: 1em;
+    padding: 4px;
+    width: 6ch;
+    vertical-align: middle;
+    font-family: monospace;
+  }
+  
